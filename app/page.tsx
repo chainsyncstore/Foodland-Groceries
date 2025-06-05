@@ -3,22 +3,6 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="min-h-screen bg-white text-[#006837] font-sans">
-      <header className="flex items-center justify-between px-6 py-4 bg-white shadow-md">
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-full overflow-hidden">
-            <Image src="/logo.PNG" alt="Foodland Logo" width={40} height={40} className="object-cover w-full h-full" />
-          </div>
-          <span className="text-xl font-bold text-[#006837]">Foodland Groceries</span>
-          <nav className="space-x-4 text-sm ml-8">
-            <a href="/" className="hover:underline">Home</a>
-            <a href="/products" className="hover:underline">Products</a>
-            <a href="/cart" className="hover:underline">Cart</a>
-            <a href="/checkout" className="hover:underline">Checkout</a>
-            <a href="/login" className="hover:underline">Login</a>
-          </nav>
-        </div>
-      </header>
-
       <main>
         <section className="text-center py-12 px-4 bg-[#FFDE00]">
           <h1 className="text-4xl font-bold text-black">Fresh Groceries, Fast Delivery</h1>
