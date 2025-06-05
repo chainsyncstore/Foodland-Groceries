@@ -9,8 +9,14 @@ export default function Home() {
             <Image src="/logo.PNG" alt="Foodland Logo" width={40} height={40} className="object-cover w-full h-full" />
           </div>
           <span className="text-xl font-bold text-[#006837]">Foodland Groceries</span>
+          <nav className="space-x-4 text-sm ml-8">
+            <a href="/" className="hover:underline">Home</a>
+            <a href="/products" className="hover:underline">Products</a>
+            <a href="/cart" className="hover:underline">Cart</a>
+            <a href="/checkout" className="hover:underline">Checkout</a>
+            <a href="/login" className="hover:underline">Login</a>
+          </nav>
         </div>
-        {/* Navigation would go here if needed */}
       </header>
 
       <main>
