@@ -6,7 +6,23 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: {
+          DEFAULT: '#006837',
+          dark: '#004d29',
+          light: '#339966',
+        },
+        accent: {
+          DEFAULT: '#FFDE00',
+          dark: '#ccb100',
+          light: '#ffe533',
+        },
+      },
+    },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }
