@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="min-h-screen bg-white text-[#006837] font-sans">
-      <header className="flex items-center justify-between px-6 py-4 bg-white shadow-md">
+      <header className="flex items-center justify-center px-6 py-4 bg-white shadow-md">
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 rounded-full overflow-hidden">
             <Image src="/logo.PNG" alt="Foodland Logo" width={40} height={40} className="object-cover w-full h-full" />
