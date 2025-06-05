@@ -4,37 +4,185 @@
 
 /* Foodland UI Theme Customizations */
 body {
-  @apply bg-white font-sans;
+  @apply bg-white font-sans text-[#222] antialiased;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+  /* Mobile-first padding */
+  padding-bottom: 4rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply font-bold;
+  @apply font-bold text-[#006837] tracking-tight;
+  /* Responsive heading sizes */
 }
+
+h1 { @apply text-3xl md:text-5xl mb-4; }
+h2 { @apply text-2xl md:text-4xl mb-3; }
+h3 { @apply text-xl md:text-2xl mb-2; }
+h4, h5, h6 { @apply text-lg md:text-xl mb-1; }
 
 /* Accent elements */
 .btn-primary {
-  @apply rounded px-4 py-2 font-semibold transition-colors;
+  @apply rounded px-4 py-2 font-semibold transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-[#FFDE00] focus:ring-offset-2;
   background-color: #006837;
   color: #fff;
 }
-.btn-primary:hover {
+.btn-primary:hover, .btn-primary:focus-visible {
   background-color: #FFDE00;
   color: #006837;
 }
 
 .btn-accent {
-  @apply rounded px-4 py-2 font-semibold transition-colors;
+  @apply rounded px-4 py-2 font-semibold transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-[#006837] focus:ring-offset-2;
   background-color: #FFDE00;
   color: #006837;
 }
-.btn-accent:hover {
+.btn-accent:hover, .btn-accent:focus-visible {
   background-color: #006837;
   color: #fff;
 }
+
+/* General link styles */
 a {
   color: #006837;
-  transition: color 0.2s;
+  transition: color 0.2s, text-decoration 0.2s;
+  text-decoration: underline dotted transparent;
+  outline: none;
 }
-a:hover {
+a:hover, a:focus-visible {
   color: #FFDE00;
+  text-decoration: underline solid #FFDE00;
+}
+
+/* Utility: Out of Stock badge */
+.badge-out {
+  @apply inline-block px-2 py-1 rounded text-xs font-bold uppercase;
+  background: #eee;
+  color: #b91c1c;
+  border: 1px solid #b91c1c;
+}
+
+/* Utility: Skeleton loader */
+.skeleton {
+  @apply animate-pulse bg-gray-200 rounded;
+}
+
+/* Responsive grid helpers */
+.grid-mobile {
+  @apply grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4;
+}
+
+/* Hide scrollbars for sliders */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Logo image tweaks */
+.logo-img {
+  @apply h-10 w-auto md:h-14;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0,104,55,0.08));
+}
+
+/* Footer styles */
+footer {
+  @apply bg-[#006837] text-white py-8 px-4 mt-8;
+}
+footer a {
+  color: #FFDE00;
+}
+footer a:hover {
+  color: #fff;
+}
+
+/* Mobile sticky cart button */
+.sticky-cart-btn {
+  @apply fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[90vw] max-w-md;
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  font-weight: 600;
+  color: #fff;
+  background: #006837;
+  min-width: 220px;
+  text-align: center;
+  animation: fadeIn 0.4s cubic-bezier(0.4,0,0.2,1) both;
+}
+.toast--success { background-color: #006837; color: #fff; }
+.toast--error { background-color: #b91c1c; color: #fff; }
+.toast--info { background-color: #FFDE00; color: #222; }
+
+/* Modal base styles */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.4);
+}
+.modal-content {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  padding: 1.5rem;
+  max-width: 28rem;
+  width: 100%;
+  position: relative;
+}
+
+/* Sticky navbar */
+.navbar--sticky {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,104,55,0.08);
+}
+
+/* Mobile drawer menu */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 80vw;
+  max-width: 20rem;
+  background: #fff;
+  z-index: 50;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.mobile-drawer.open {
+  transform: translateX(0);
+}
+
+/* Utility: Large touch targets */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animation: fadeIn */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
 }
