@@ -4,22 +4,37 @@
 
 /* Foodland UI Theme Customizations */
 body {
-  @apply bg-white text-primary font-sans;
+  @apply bg-white font-sans;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply font-bold text-primary;
-}
-
-a {
-  @apply text-primary hover:text-accent transition-colors;
+  @apply font-bold;
 }
 
 /* Accent elements */
 .btn-primary {
-  @apply bg-primary text-white rounded px-4 py-2 font-semibold hover:bg-accent hover:text-primary transition-colors;
+  @apply rounded px-4 py-2 font-semibold transition-colors;
+  background-color: #006837;
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #FFDE00;
+  color: #006837;
 }
 
 .btn-accent {
-  @apply bg-accent text-primary rounded px-4 py-2 font-semibold hover:bg-primary hover:text-white transition-colors;
+  @apply rounded px-4 py-2 font-semibold transition-colors;
+  background-color: #FFDE00;
+  color: #006837;
+}
+.btn-accent:hover {
+  background-color: #006837;
+  color: #fff;
+}
+a {
+  color: #006837;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #FFDE00;
 }
