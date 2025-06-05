@@ -1,5 +1,0 @@
-{
-  "rootDirectory": "src",
-  "buildCommand": "next build",
-  "outputDirectory": ".next"
-} 
