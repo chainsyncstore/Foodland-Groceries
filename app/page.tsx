@@ -3,7 +3,16 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="min-h-screen bg-white text-[#006837] font-sans">
-      {/* Remove duplicated header here, only keep main content */}
+      <header className="flex items-center justify-between px-6 py-4 bg-white shadow-md">
+        <div className="flex items-center space-x-3">
+          <div className="w-10 h-10 rounded-full overflow-hidden">
+            <Image src="/logo.PNG" alt="Foodland Logo" width={40} height={40} className="object-cover w-full h-full" />
+          </div>
+          <span className="text-xl font-bold text-[#006837]">Foodland Groceries</span>
+        </div>
+        {/* Navigation would go here if needed */}
+      </header>
+
       <main>
         <section className="text-center py-12 px-4 bg-[#FFDE00]">
           <h1 className="text-4xl font-bold text-black">Fresh Groceries, Fast Delivery</h1>
